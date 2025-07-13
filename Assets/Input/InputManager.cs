@@ -5,28 +5,33 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
-    private PlayerInput playerInput; 
+    private PlayerInput playerInput;
     private PlayerInput.OnFootActions onFoot;
     private Movement move;
-    void Awake()
+
+    void OnEnable()
     {
-        playerInput = new PlayerInput();
-        onFoot = playerInput.OnFoot;  
+        if (playerInput == null)
+        {
+            playerInput = new PlayerInput();
+            onFoot = playerInput.OnFoot;
+        }
+
+        onFoot.Enable();
+    }
+
+    void Start()
+    {
         move = GetComponent<Movement>();
     }
 
     void Update()
     {
-        Vector2 move = onFoot.Movement.ReadValue<Vector2>();
-        Debug.Log("Move input: " + move);
+        Vector2 moveInput = onFoot.Movement.ReadValue<Vector2>();
+        Debug.Log("Move input: " + moveInput);
     }
 
-    private void OnEnable()
-    {
-        onFoot.Enable();
-    }
-
-    private void OnDisable()
+    void OnDisable()
     {
         onFoot.Disable();
     }

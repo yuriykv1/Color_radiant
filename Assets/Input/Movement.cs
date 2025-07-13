@@ -43,14 +43,16 @@ public class Movement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         float forward = Vector3.Dot(transform.forward, move);
-        animator.SetFloat("forward", forward);
+        animator.SetFloat("speed", forward);
 
         controller.Move(move * speed * Time.deltaTime);
-         
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator.SetBool("jump", true);
         }
+        else { animator.SetBool("jump", false); }
 
 
         velocity.y += gravity * Time.deltaTime;
@@ -63,7 +65,7 @@ public class Movement : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -50f, 50f);
 
 
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);

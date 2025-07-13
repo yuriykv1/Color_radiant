@@ -5,12 +5,12 @@ using UnityEngine.AI;
 
 public class Seek : MonoBehaviour
 {
-    private Transform player;
+    public Transform player;
     private NavMeshAgent agent;
 
     void Start()
     {
-        player = GameObject.Find("character").transform;
+        
         agent = GetComponent<NavMeshAgent>();
     }
 

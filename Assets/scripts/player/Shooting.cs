@@ -6,7 +6,7 @@ public class Shooting : MonoBehaviour
     private Animator animator;
     [SerializeField] private Transform firePoint;
     [SerializeField] private float shootDelay = 0.3f;
-
+    [SerializeField] private RectTransform crosshair;
     private bool isShooting = false;
     private bool canShoot = true;
 
@@ -48,12 +48,12 @@ public class Shooting : MonoBehaviour
 
     private IEnumerator Shoot()
     {
-        canShoot = false;
-        animator.SetTrigger("Shooting");
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        animator.SetTrigger("shooting");
+        Vector2 crosshairScreenPos = crosshair.position;
+        Ray ray = Camera.main.ScreenPointToRay(crosshairScreenPos);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            Debug.Log("Hit object: " + hit.collider.name);
+            Debug.Log("Hit object: " + hit.collider.tag);
             Debug.DrawLine(firePoint.position, hit.point, Color.green, 7f);
         }
         else
@@ -62,6 +62,6 @@ public class Shooting : MonoBehaviour
         }
 
         yield return new WaitForSeconds(shootDelay);
-        canShoot = true;
+
     }
 }

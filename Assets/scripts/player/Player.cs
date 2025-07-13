@@ -23,7 +23,7 @@ public class Player : MonoBehaviour, Health
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             TakeDamage(8);
         }

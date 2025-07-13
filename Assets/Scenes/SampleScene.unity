@@ -1050,6 +1050,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6056498046229676085, guid: 920ccefdcc7caf14e8e0bd3df2620c80, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1663615745}
+    - targetCorrespondingSourceObject: {fileID: 6056498046229676085, guid: 920ccefdcc7caf14e8e0bd3df2620c80, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1663615746}
   m_SourcePrefab: {fileID: 100100000, guid: 920ccefdcc7caf14e8e0bd3df2620c80, type: 3}
 --- !u!1 &834255306
 GameObject:
@@ -1531,6 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5086aaf0583bb934c8448d746f4b7d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1663615747}
 --- !u!1 &1027759957
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,7 +1552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1027759958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2214,6 +2218,26 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1663615746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663615736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5cf2f08e24e7e4fb6dc3e96b59b796, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 689414859}
+  shootDelay: 0.3
+  crosshair: {fileID: 1741329401}
+--- !u!4 &1663615747 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6865403719675959951, guid: 920ccefdcc7caf14e8e0bd3df2620c80, type: 3}
+  m_PrefabInstance: {fileID: 827796280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1741329400
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,43 +2514,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.092
+      value: 0.046
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.086
+      value: 0.125
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.312
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70605457
+      value: 0.005243115
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.03856398
+      value: -0.013474039
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.03856398
+      value: 0.7563251
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.70605433
+      value: 0.65403605
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 6.253
+      value: -81.678
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 183.84
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 90
+      value: -5.361
       objectReference: {fileID: 0}
     - target: {fileID: -7562103706459026461, guid: 1de81232e691de445833ed14fd8d0c7d, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -9911,6 +9935,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1741329401}
   shootDelay: 0.3
+  crosshair: {fileID: 0}
 --- !u!114 &5866666021002807394
 MonoBehaviour:
   m_ObjectHideFlags: 0
